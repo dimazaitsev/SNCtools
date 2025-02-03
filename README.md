@@ -1,4 +1,4 @@
-## `NDRtoSN: Convert from NDR to *SN`
+## `SNCtools: Tools for Sleptsov Net Computing`
 
 # Convertor of Tina NDR Petri net file to Sleptsov Net file
 
