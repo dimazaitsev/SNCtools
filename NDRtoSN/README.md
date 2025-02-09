@@ -9,18 +9,18 @@ How to use `NDRtoSN` as a part of experimental `SNC IDE&VM`:
 We list references to components in "Compatibility" section.
 
 1) Use `Tina` `nd` as graphical editor and its labels with special syntax (section "Transition substitution label") to specify transition substitution of `HSN`.
+  
+2) Use `NDRtoSN` to convert `NDR` file of `Tina` into `.h` header file of C language for inluding into Arduiono SN VM, possibly followed by GPIO pin mapping code generated on SN input/output places' labeles of a special format (described below).
 
-2) Use `NDRtoSN` to convert `NDR` file of `Tina` into `HSN` or `LSN`. 
-
-3) Use `HSNtoLSN` to compile and link HSN file and mentioned in it `LSN` files into a single `LSN` file.
-
-4) Run `LSN` file on `SN-VM` or `SN-VM-GPU`.
+3) Use `NDRtoSN` to convert `NDR` file of `Tina` into `HSN` or `LSN`. Use `HSNtoLSN` to compile and link HSN file and mentioned in it `LSN` files into a single `LSN` file. Run `LSN` file on `SN-VM` or `SN-VM-GPU`.
 
 
 Compatibility: 
 -------------- 
 
 `Tina`, `nd`, and `NDR` file format according to https://projects.laas.fr/tina/index.php
+
+`SNC_ArduinoIDE` SN declarations in the form of C language sn.h file and GPIO pin map file for https://github.com/dimazaitsev/SNC_ArduinoIDE
 
 `NDRtoSN` and transition substitution labels according to https://github.com/dazeorgacm/NDRtoSN
 
@@ -29,8 +29,6 @@ Compatibility:
 `HSNtoLSN` and `HSN` file format according to https://github.com/HfZhao1998/Compiler-and-Linker-of-Sleptsov-net-Program
 
 `SN-VM-GPU` and `MSN` file format according to https://github.com/tishtri/SN-VM-GPU
-
-`SNC_ArduinoIDE` SN declarations in the form of C language sn.h file for https://github.com/dimazaitsev/SNC_ArduinoIDE
 
 To build `NDRtoSN`, files for work with abstract lists al.h and al.c should be downloaded from https://github.com/dazeorgacm/ts
 
