@@ -1,6 +1,6 @@
 ## `SNCtools: Tools for Sleptsov Net Computing`
 
-# Convertor of Tina NDR Petri net file to Sleptsov Net file
+# Convertor of Tina NDR Petri net file to Sleptsov Net file and Arduino GPIO pin map
 
 
 How to use `NDRtoSN` as a part of experimental `SNC IDE&VM`:
@@ -42,9 +42,13 @@ Command line format:
    
    >NDRtoSN NDR_file_name HSN_file_name
 
-   >NDRtoSN NDR_file_name -c H_file_name *
+   >NDRtoSN NDR_file_name -c H_file_name
+
+   >NDRtoSN NDR_file_name -i H_file_name
    
-File type HSN/LSN is chosen based on the presence of transition substitution labels. Insert any string as the third parameter to generate SN declarations in the form of C language sn.h file. 
+File type HSN/LSN is chosen based on the presence of transition substitution labels. 
+
+Using -c, only SN specification is generated to include into Arduino SN VM. Using -i, SN specification is followed by SN input/output places mapping into a microcontroler's GPIO pins according to the Arduino IDE requirements. The code has been debugged to work with buttons and LEDs on Raspberry Pi Pico and can be edited. 
    
    
 Examples of command lines: 
@@ -54,11 +58,31 @@ Examples of command lines:
    
    >NDRtoSN add2.ndr add2.hsn
 
-   >NDRtoSN add2.ndr sn.h h
+   >NDRtoSN add2.ndr -c sn.h 
   
   
-Transition substitution label:
-------------------------------
+I/O pin map labels for Arduino IDE:
+-----------------------------------
+
+*IN(pin) / *OUT(pin)
+
+"*IN" - prefix of input GPIO mapping label, should be at the beginning of the label
+
+"*OUT" - prefix of output GPIO mapping label, should be at the beginning of the label
+
+"(" - begin of specification
+
+")" - end of specification
+
+pin - number of pin
+
+An input pin is processed via Arduino interrupt on RISING signal
+
+An output place marking value 1 switches to HIGH and >1 switches to LOW
+
+
+Transition substitution label for HSN:
+--------------------------------------
 
 *HSN(snname i hpname lpnum ... o hpname lpnum ... s pname lpnum f hpname lpnum)
 
