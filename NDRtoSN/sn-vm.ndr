@@ -1,0 +1,67 @@
+p 265.0 20.0 q0 1 e
+t 265.0 100.0 t0 0 w n
+p 265.0 180.0 q1 0 e
+t 265.0 260.0 t1 0 w n
+p 265.0 340.0 q2 0 e
+t 265.0 420.0 t2 0 w n
+p 265.0 500.0 q3 0 w
+p 50.0 100.0 coin 0 n {*IN(15)} sw
+p 50.0 180.0 choc 0 n {*IN(14)} sw
+t 180.0 230.0 t7 0 w n
+p 55.0 380.0 ret 0 n {*IN(13)} sw
+t 345.0 270.0 t9 0 w n
+t 345.0 155.0 t10 0 w n
+t 180.0 70.0 t12 0 w n
+t 180.0 145.0 t13 0 w n
+p 505.0 90.0 r_coin 0 n {*OUT(16)} se
+p 505.0 230.0 m_choc 0 n {*OUT(17)} se
+p 505.0 450.0 d_choc 0 n {*OUT(18)} se
+t 185.0 450.0 t6 0 w n
+t 180.0 20.0 t11 0 w n
+t 360.0 500.0 t5 0 w n
+t 345.0 380.0 t8 0 w n
+e q0 t0 1 n
+e coin t0 1 n
+e t0 q1 1 n
+e q1 t1 1 n
+e t1 q2 1 n
+e q2 t2 1 n
+e t2 q3 1 n
+e coin t1 1 n
+e coin t2 1 n
+e q3 t5 1 n
+e t5 q3 1 n
+e coin t5 1 n
+e q3 t6 1 n
+e t6 q0 1 n
+e choc t6 1 n
+e q2 t7 1 n
+e choc t7 1 n
+e t7 q0 1 n
+e q3 t8 1 n
+e t8 q2 1 n
+e ret t8 1 n
+e q2 t9 1 n
+e t9 q1 1 n
+e ret t9 1 n
+e q1 t10 1 n
+e ret t10 1 n
+e t10 q0 1 n
+e t5 r_coin 1 n
+e t8 r_coin 1 n
+e t9 r_coin 1 n
+e t10 r_coin 1 n
+e t7 m_choc 1 n
+e t6 d_choc 1 n
+e choc t11 1 n
+e q0 t11 1 n
+e t11 q0 1 n
+e ret t12 1 n
+e q0 t12 1 n
+e t12 q0 1 n
+e choc t13 1 n
+e q1 t13 1 n
+e t13 q1 1 n
+h {sn-vm-new} small
+
+
