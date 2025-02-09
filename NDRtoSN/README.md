@@ -46,7 +46,7 @@ Command line format:
    
 File type HSN/LSN is chosen based on the presence of transition substitution labels. 
 
-Using -c, only SN specification is generated to include into Arduino SN VM. Using -i, SN specification is followed by SN input/output places mapping into a microcontroler's GPIO pins according to the Arduino IDE requirements. The code has been debugged to work with buttons and LEDs on Raspberry Pi Pico and can be edited. 
+Using -c, only SN specification is generated to include into Arduino SN VM. Using -i, SN specification is followed by SN input/output places mapping into a microcontroler's GPIO pins according to the Arduino IDE requirements. The code has been debugged to work with buttons and LEDs on Raspberry Pi Pico and can be edited. Here we switch all outputs to LOW when processing next input for brevity of example, the corresponding code can be edited. 
    
    
 Examples of command lines: 
