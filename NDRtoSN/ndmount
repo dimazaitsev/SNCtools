@@ -1,0 +1,5 @@
+# .ndr tools
+
+mount NDRtoSN {convert Sleptsov net specification} .ndr .txt NDRtoSN.tcl
+
+
