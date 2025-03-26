@@ -10,7 +10,7 @@
 
 ## Usage
 
->LSNtoMCC < file.lsn > file.mcc
+>./lsn-to-mcc lsn_file > mcc_file
    
 References: 
 ----------- 
