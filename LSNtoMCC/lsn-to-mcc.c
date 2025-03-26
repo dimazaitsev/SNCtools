@@ -1,6 +1,6 @@
 // Convertor of LSN to MCC
 //
-// MSN: Sleptsov Net Raw Matrix File Format
+// LSN: Low-level Sleptsov Net File Format
 // MCC: Sleptsov Net Matrix with Condensed Columns Format
 //
 // Compile: gcc -o lsn-to-mcc lsn-to-mcc.c
@@ -434,4 +434,4 @@ if(dbg>1){
 
 }
 
-//  2024 daze@acm.org
+//  @ 2024 daze@acm.org
