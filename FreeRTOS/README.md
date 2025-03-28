@@ -29,6 +29,13 @@ Run using FreeRTOS Linux port:
 Sleptsov steers !
 
 
+# Learn when coding
+
+1) Compose autonomous models for other parts of the automated manufacture shop: storage (palette) and rotary table
+2) Compose an integrated model of the entire shop
+3) Bring in hardware -- replace by hardware models of plant
+
+
 # Alternative implementation - using Sleptsov Net Computing
 
 1) Draw ES in Tina, nd graphical editor
