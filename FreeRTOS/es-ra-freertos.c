@@ -3,6 +3,7 @@
 // The automated manufacture shop composition of a robotic arm, storage (palette), and rotary table is specified in:
 // Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng.
 // https://dimazaitsev.github.io/pdf/pnms-en.pdf
+// Laboratory lesson 6. Construction and investigation of models for automatic control 
 // The control algorithm is given by a Sleptsov Net (https://dimazaitsev.github.io/snc.html)
 // 
 // Run using FreeRTOS Linux port: 
