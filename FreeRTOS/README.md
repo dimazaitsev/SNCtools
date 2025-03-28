@@ -13,7 +13,7 @@ For further implementation on microcontrollers, say on Raspberry Pi Pico, using 
 
 The automated manufacture shop composition of a robotic arm, storage (palette), and rotary table is specified in:
 
-Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng. -- https://dimazaitsev.github.io/pdf/pnmsua-en.pdf
+Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng. -- https://dimazaitsev.github.io/pdf/pnms-en.pdf
 
 The control algorithm is given by a Sleptsov Net (https://dimazaitsev.github.io/snc.html)
 
@@ -42,7 +42,7 @@ Sleptsov steers !
 2. Dmitry A. Zaitsev, Tatiana R. Shmeleva, Qing Zhang, and Hongfei Zhao, Virtual Machine and Integrated Developer Environment for Sleptsov Net Computing Parallel Processing Letters, Vol. 33, No. 03, 2350006 (2023). https://doi.org/10.1142/S0129626423500068
 3. Zaitsev D.A., Jürjens J. Programming in the Sleptsov net language for systems control, Advances in Mechanical Engineering, 2016, Vol. 8(4), 1-11. https://doi.org/10.1177%2F1687814016640159
 4. Zaitsev D.A. Sleptsov Nets Run Fast, IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2016, Vol. 46, No. 5, 682 - 693. http://dx.doi.org/10.1109/TSMC.2015.2444414
-5. Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng. https://dimazaitsev.github.io/pdf/pnmsua-en.pdf
+5. Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng. https://dimazaitsev.github.io/pdf/pnms-en.pdf
 
 ----------------------------------------------------------------------- 
 @ 2025 Dmitry Zaitsev: daze@acm.org 
