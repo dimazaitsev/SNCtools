@@ -20,9 +20,9 @@ The control algorithm is given by a Sleptsov Net (https://dimazaitsev.github.io/
 Run using FreeRTOS Linux port: 
 
 1) Install FreeRTOS Linux port https://bitbucket.org/fjrg76/freertosv202107.00_linux_port_only/src/master/README.tx
-2)replace code inside main_blinky.c by this code
-3) make
-4) ./build/posix_demo
+2) replace code inside main_blinky.c by this code
+4) make
+5) ./build/posix_demo
 
 Sleptsov steers !
 
