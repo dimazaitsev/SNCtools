@@ -29,7 +29,7 @@ Run using FreeRTOS Linux port:
 Sleptsov steers !
 
 
-# Learn when coding
+## Learn when coding
 
 1) Compose autonomous models for other parts of the automated manufacture shop: storage (palette) and rotary table
 2) Compose an integrated model of the entire shop
