@@ -1,4 +1,4 @@
-// RACPico: Robotic Arm Control, FreeRTOS, RP Pico
+// RACPico: Robotic Arm Control, FreeRTOS, Rasberry Pi Pico
 //
 // The automated manufacture shop composition of a robotic arm, storage (palette), and rotary table is specified in:
 // Zaitsev D.A. Petri Nets and Modelling of Systems: textbook for laboratory training. Odessa: ONAT, 2007, 42 p. In Ukr. / Eng.
@@ -16,12 +16,14 @@
 // 5) Input sensors corresponding to actuators completed by #
 // 6) Check the model trace appended at the bottom
 //
+// Jump to the application directory cd /home/sysprog/pisdk/freertos-pi-pico/app/build
+//
 // Please excuse for a clumsy insertion of code (to have a single .c) for:
 // keypad from https://github.com/hhoswaldo/pico-keypad4x4
 // LCD from https://github.com/raspberrypi/pico-examples/tree/master/i2c/lcd_1602_i2c
 //
 // Sleptsov steers !
-// cd /home/sysprog/pisdk/freertos-pi-pico/app/build
+// https://youtu.be/7HPnhaNGyqo
 
 #include <stdio.h>
 #include <stdlib.h>
