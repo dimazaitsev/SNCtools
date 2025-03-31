@@ -12,6 +12,10 @@ We use LCD to indicate actuators and sensors and keypad to input sensor.
 
 Connection: Keypad GPIO 13, 12, 11, 10, 9, 8, 7, 6; LCD GPIO 4 sda, 5 scl and 3.3v, gnd (see photo)
 
+## Video
+
+https://youtu.be/7HPnhaNGyqo
+
 ## Install & run
 
 Install and run software in FreeRTOS RP Pico port:
