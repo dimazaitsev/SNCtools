@@ -14,4 +14,4 @@ References for Sleptsov Net Computing (SNC) to read, watch, run, cite, and join,
 
 ## Notes
 
-For cross check of code and benchmarks, an indepentent implementation by J.F.C. Bartlett https://github.com/JFCBartlett/SN-VM-CPU has been employed.
+For cross-check of code and benchmarks, an indepentent implementation by J.F.C. Bartlett https://github.com/JFCBartlett/SN-VM-CPU has been employed.
