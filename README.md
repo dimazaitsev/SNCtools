@@ -2,15 +2,15 @@
 
 # Content: 
 
-NDRtoSN -- Tina plugin to export an SN from the graphic editor `nd` in LSN/HSN format or as C language header (.h)
+`NDRtoSN` -- Tina plugin to export an SN from the graphic editor `nd` in LSN/HSN format or as C language header (.h)
 
-LSNtoMCC -- SN file convertor: LSN to MCC
+`LSNtoMCC` -- SN file convertor: LSN to MCC
 
-SN-MCC-VM-CPU -- SN virtual machine for multicore CPU with input in MCC format
+`SN-MCC-VM-CPU` -- SN virtual machine for multicore CPU with input in MCC format
 
-SN-MCC-VM-GPU -- SN virtual machine for GPU with input in MCC format
+`SN-MCC-VM-GPU` -- SN virtual machine for GPU with input in MCC format
 
-FreeRTOS -- simulation and prototyping within FreeRTOS, automated manufacture shop case study
+`FreeRTOS` -- simulation and prototyping within FreeRTOS, automated manufacture shop case study
 
 
 # Data formats compatibility:
