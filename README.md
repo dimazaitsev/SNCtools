@@ -10,6 +10,8 @@ SN-MCC-VM-CPU -- SN virtual machine for multicore CPU with input in MCC format
 
 SN-MCC-VM-GPU -- SN virtual machine for GPU with input in MCC format
 
+FreeRTOS -- simulation and prototyping within FreeRTOS, automated manufacture shop case study
+
 
 # Data formats compatibility:
 
