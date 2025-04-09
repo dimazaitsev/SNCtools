@@ -2,7 +2,7 @@
 
 ## Howto
 
-Compile, link, and run as specified in the cooments using benchmark nets from `MCC` directory.
+Compile, link, and run as specified in the code comments using benchmark nets from `MCC` directory.
 
 
 ## References
