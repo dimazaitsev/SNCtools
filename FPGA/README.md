@@ -5,7 +5,7 @@
 ## Prototype: 3 buttons, 3 LEDs, internal reset and clock
 
 # Content
-`vm-v.txt` parts to copy/paste Gowin FPGA Designer project
+`vm-v.txt` parts to copy/paste Gowin FPGA Designer project: Verilog, constraints, device specification
 
 # Video
 x
