@@ -1,0 +1,157 @@
+// Vending machine
+//
+// VM 1 coint, 2 buttons - ret and choc, 2 choc for 2 and 3 coins
+
+
+// Device choice for project
+
+// Device: GW1NR-9
+// Part Number: GW1NR-LV9QN88PC6/15 
+// Device Version: C
+// Package: QFN88P
+// Speed: C6/l5
+// Voltage: LV
+
+
+// Verolog file vm.v
+
+
+// Verilog code for button debouncing on FPGA
+// debouncing module 
+module debounce(input pb_1,clk,output pb_out);
+wire slow_clk;
+wire Q1,Q2,Q2_bar,Q0;
+clock_div u1(clk,slow_clk);
+my_dff d0(slow_clk, pb_1,Q0 );
+
+my_dff d1(slow_clk, Q0,Q1 );
+my_dff d2(slow_clk, Q1,Q2 );
+assign Q2_bar = ~Q2;
+assign pb_out = Q1 & Q2_bar;
+endmodule
+// Slow clock for debouncing 
+module clock_div(input Clk_27M, output reg slow_clk
+
+    );
+    reg [26:0]counter=0;
+    always @(posedge Clk_27M)
+    begin
+        counter <= (counter>=249999)?0:counter+1;
+        slow_clk <= (counter < 125000)?1'b0:1'b1;
+    end
+endmodule
+// D-flip-flop for debouncing module 
+module my_dff(input DFF_CLOCK, D, output reg Q);
+
+    always @ (posedge DFF_CLOCK) begin
+        Q <= D;
+    end
+
+endmodule
+
+// end debouncing
+
+
+module chocVM ( 
+input clock,  
+input reset,
+input coin, 
+input choc,
+input ret,
+output rcoin,
+output mchoc,
+output dchoc );  
+
+wire slow_coin;
+wire slow_ret;
+wire slow_chock;
+wire slow_clk;
+debounce db1(coin, clock, slow_coin);
+debounce db2(ret, clock, slow_ret);
+debounce db3(choc, clock, slow_choc);
+clock_div cd1(clock, slow_clock);
+
+reg [1:0] state=2'b00, next_state=2'b00; 
+reg cur_rcoin = 1'b0, next_rcoin=1'b0;
+reg cur_mchoc = 1'b0, next_mchoc=1'b0;
+reg cur_dchoc = 1'b0, next_dchoc=1'b0;
+ 
+always @ (posedge slow_clock) // next state computation 
+begin 
+       if(state==0 && slow_coin) next_state=1; 
+  else if(state==1 && slow_coin) next_state=2;
+  else if(state==2 && slow_coin) next_state=3;
+  else if(state==1 && slow_ret)  next_state=0;
+  else if(state==2 && slow_ret)  next_state=1;
+  else if(state==3 && slow_ret)  next_state=2;
+  else if(state==2 && slow_choc) next_state=0;
+  else if(state==3 && slow_choc) next_state=0;
+  else next_state=state;
+end
+ 
+always @ (negedge slow_clock) // state switching 
+begin 
+  if (reset == 1'b0) begin 
+    state <= 2'b00; 
+    cur_rcoin <= 1'b0;
+    cur_mchoc <= 1'b0;
+    cur_dchoc <= 1'b0;
+  end
+  else begin
+    state <= next_state;
+    cur_rcoin <= next_rcoin;
+    cur_mchoc <= next_mchoc;
+    cur_dchoc <= next_dchoc;
+  end
+end  
+
+always @ (posedge slow_clock) // Output logic-determines outputs from current state 
+begin 
+       if(state==3 && slow_coin) begin next_rcoin=1; next_mchoc=0; next_dchoc=0; end
+  else if(state==1 && slow_ret)  begin next_rcoin=1; next_mchoc=0; next_dchoc=0; end
+  else if(state==2 && slow_ret)  begin next_rcoin=1; next_mchoc=0; next_dchoc=0; end
+  else if(state==3 && slow_ret)  begin next_rcoin=1; next_mchoc=0; next_dchoc=0; end
+  else if(state==2 && slow_choc) begin next_rcoin=0; next_mchoc=1; next_dchoc=0; end
+  else if(state==3 && slow_choc) begin next_rcoin=0; next_mchoc=0; next_dchoc=1; end
+  else if(slow_choc || slow_coin || slow_ret) begin next_rcoin=0; next_mchoc=0; next_dchoc=0; end
+  else begin next_rcoin=cur_rcoin; next_mchoc=cur_mchoc; next_dchoc=cur_dchoc; end
+end  
+
+assign rcoin = cur_rcoin;
+assign mchoc = cur_mchoc;
+assign dchoc = cur_dchoc;
+
+endmodule
+
+// end of vm.v
+
+
+// Constrains file vm.cst
+
+IO_LOC "rcoin" 27;
+IO_PORT "rcoin" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "mchoc" 26;
+IO_PORT "mchoc" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "dchoc" 25;
+IO_PORT "dchoc" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "coin" 79;
+IO_PORT "coin" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "choc" 80;
+IO_PORT "choc" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "ret" 81;
+IO_PORT "ret" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "reset" 3;
+IO_PORT "reset" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "clock" 52;
+IO_PORT "clock" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// end of vm.cst
+
+// end of VM
