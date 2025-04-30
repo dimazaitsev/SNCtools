@@ -8,7 +8,7 @@
 `vm-v.txt` parts to copy/paste Gowin FPGA Designer project: Verilog, constraints, device specification
 
 # Video
-x
+https://youtu.be/6j3RipPsDJQ
 
 ## References
 
