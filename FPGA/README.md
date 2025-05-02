@@ -6,13 +6,13 @@
 
 # Content
 
-`sn-es-vm-v`parts to copy/paste Gowin FPGA Designer project, SN based design: Verilog, constraints, device specification [1]-[3]
+`sn-es-vm-v.txt`parts to copy/paste Gowin FPGA Designer project, SN based design: Verilog, constraints, device specification [1]-[3]
 
 `fa/vm-v.txt` parts to copy/paste Gowin FPGA Designer project, automata based desing: Verilog, constraints, device specification [1],[2] (lectures 3,4)
 
 # Video lesson
 
-`sn-es-vm-v` x
+`sn-es-vm-v.txt` https://youtu.be/abHt-0SVthA
 
 `fa/vm-v.txt` https://youtu.be/6j3RipPsDJQ
 
