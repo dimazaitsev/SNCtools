@@ -2,7 +2,7 @@
 // https://doi.org/10.1109/ICESS64277.2024.00011
 // Vending Machine (VM) example
 // VM 1 coint, 2 buttons - ret and choc, 2 choc for 2 and 3 coins
-// Video: x
+// Video: https://youtu.be/abHt-0SVthA
 
 
 // Device choice for project
