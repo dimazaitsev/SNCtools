@@ -1,0 +1,252 @@
+// Sleptsov net based reliable embedded system design on FPGAs
+// https://doi.org/10.1109/ICESS64277.2024.00011
+// Vending Machine (VM) example
+// VM 1 coint, 2 buttons - ret and choc, 2 choc for 2 and 3 coins
+// Video: x
+
+
+// Device choice for project
+
+// Device: GW1NR-9
+// Part Number: GW1NR-LV9QN88PC6/15 
+// Device Version: C
+// Package: QFN88P
+// Speed: C6/l5
+// Voltage: LV
+
+
+// Verolog file vm.v
+
+// Vending machine compiled from SN
+// With #n comments, we specify modifications of compiled code
+
+// #2 Verilog code for button debouncing on FPGA
+// debouncing module 
+module debounce(input pb_1,clk,output pb_out);
+wire slow_clk;
+wire Q1,Q2,Q2_bar,Q0;
+clock_div u1(clk,slow_clk);
+my_dff d0(slow_clk, pb_1,Q0 );
+
+my_dff d1(slow_clk, Q0,Q1 );
+my_dff d2(slow_clk, Q1,Q2 );
+assign Q2_bar = ~Q2;
+assign pb_out = Q1 & Q2_bar;
+endmodule
+// Slow clock for debouncing 
+module clock_div(input Clk_27M, output reg slow_clk
+
+    );
+    reg [26:0]counter=0;
+    always @(posedge Clk_27M)
+    begin
+        counter <= (counter>=249999)?0:counter+1;
+        slow_clk <= (counter < 125000)?1'b0:1'b1;
+    end
+endmodule
+// D-flip-flop for debouncing module 
+module my_dff(input DFF_CLOCK, D, output reg Q);
+
+    always @ (posedge DFF_CLOCK) begin
+        Q <= D;
+    end
+
+endmodule
+
+// end debouncing
+
+// #1 input/output parameters according to SN
+module chocVM ( 
+input clock,  
+input reset,
+input coin, 
+input choc,
+input ret,
+output rcoin,
+output mchoc,
+output dchoc );  
+
+// #3 slow inputs and slow clock using debouncing
+wire slow_coin;
+wire slow_ret;
+wire slow_chock;
+wire slow_clock;
+debounce db1(coin, clock, slow_coin);
+debounce db2(ret, clock, slow_ret);
+debounce db3(choc, clock, slow_choc);
+clock_div cd1(clock, slow_clock);
+
+
+`define INH(place) ((place) == 0 ? 255 : 0)
+reg [7:0] p0=1,p1=0,p2=0,p3=0,p4=0,p5=0,p6=0,p7=0,p8=0,p9=0;
+reg [7:0] f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11;
+reg [7:0] tf;
+reg [7:0] tc;
+
+// #4 use slow clock
+always @(posedge slow_clock) begin
+// #5 (slow) input signal mapping onto input places
+p4 = slow_coin;
+p5 = slow_choc;
+p6 = slow_ret;
+if(slow_coin || slow_choc || slow_ret)
+begin
+p7=0; p8=0; p9=0;
+end
+
+        f0 = 255;
+        f0 = (f0 > p0) ? p0 : f0;
+        f0 = (f0 > p4) ? p4 : f0;
+        f1 = 255;
+        f1 = (f1 > p1) ? p1 : f1;
+        f1 = (f1 > p4) ? p4 : f1;
+        f2 = 255;
+        f2 = (f2 > p2) ? p2 : f2;
+        f2 = (f2 > p4) ? p4 : f2;
+        f3 = 255;
+        f3 = (f3 > p2) ? p2 : f3;
+        f3 = (f3 > p5) ? p5 : f3;
+        f4 = 255;
+        f4 = (f4 > p2) ? p2 : f4;
+        f4 = (f4 > p6) ? p6 : f4;
+        f5 = 255;
+        f5 = (f5 > p1) ? p1 : f5;
+        f5 = (f5 > p6) ? p6 : f5;
+        f6 = 255;
+        f6 = (f6 > p0) ? p0 : f6;
+        f6 = (f6 > p6) ? p6 : f6;
+        f7 = 255;
+        f7 = (f7 > p1) ? p1 : f7;
+        f7 = (f7 > p5) ? p5 : f7;
+        f8 = 255;
+        f8 = (f8 > p3) ? p3 : f8;
+        f8 = (f8 > p5) ? p5 : f8;
+        f9 = 255;
+        f9 = (f9 > p0) ? p0 : f9;
+        f9 = (f9 > p5) ? p5 : f9;
+        f10 = 255;
+        f10 = (f10 > p3) ? p3 : f10;
+        f10 = (f10 > p4) ? p4 : f10;
+        f11 = 255;
+        f11 = (f11 > p3) ? p3 : f11;
+        f11 = (f11 > p6) ? p6 : f11;
+        tf = (f0>0)?1:(f1>0)?2:(f2>0)?3:(f3>0)?4:(f4>0)?5:(f5>0)?6:(f6>0)?7:(f7>0)?8:(f8>0)?9:(f9>0)?10:(f10>0)?11:(f11>0)?12:0;
+        case(tf)
+                1: begin
+                        tc = f0;
+                        p0 = p0 - tc;
+                        p4 = p4 - tc;
+                        p1 = p1 + tc;
+                end
+                2: begin
+                        tc = f1;
+                        p1 = p1 - tc;
+                        p4 = p4 - tc;
+                        p2 = p2 + tc;
+                end
+                3: begin
+                        tc = f2;
+                        p2 = p2 - tc;
+                        p4 = p4 - tc;
+                        p3 = p3 + tc;
+                end
+                4: begin
+                        tc = f3;
+                        p2 = p2 - tc;
+                        p5 = p5 - tc;
+                        p0 = p0 + tc;
+                        p8 = p8 + tc;
+                end
+                5: begin
+                        tc = f4;
+                        p2 = p2 - tc;
+                        p6 = p6 - tc;
+                        p1 = p1 + tc;
+                        p7 = p7 + tc;
+                end
+                6: begin
+                        tc = f5;
+                        p1 = p1 - tc;
+                        p6 = p6 - tc;
+                        p0 = p0 + tc;
+                        p7 = p7 + tc;
+                end
+                7: begin
+                        tc = f6;
+                        p0 = p0 - tc;
+                        p6 = p6 - tc;
+                        p0 = p0 + tc;
+                end
+                8: begin
+                        tc = f7;
+                        p1 = p1 - tc;
+                        p5 = p5 - tc;
+                        p1 = p1 + tc;
+                end
+                9: begin
+                        tc = f8;
+                        p3 = p3 - tc;
+                        p5 = p5 - tc;
+                        p0 = p0 + tc;
+                        p9 = p9 + tc;
+                end
+                10: begin
+                        tc = f9;
+                        p0 = p0 - tc;
+                        p5 = p5 - tc;
+                        p0 = p0 + tc;
+                end
+                11: begin
+                        tc = f10;
+                        p3 = p3 - tc;
+                        p4 = p4 - tc;
+                        p3 = p3 + tc;
+                        p7 = p7 + tc;
+                end
+                12: begin
+                        tc = f11;
+                        p3 = p3 - tc;
+                        p6 = p6 - tc;
+                        p2 = p2 + tc;
+                        p7 = p7 + tc;
+                end
+                default:;
+        endcase
+end
+
+// #6 output places mapping onto output signals
+assign rcoin = p7;
+assign mchoc = p8;
+assign dchoc = p9;
+
+endmodule
+
+// Constrains file vm.cst
+
+IO_LOC "rcoin" 27;
+IO_PORT "rcoin" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "mchoc" 26;
+IO_PORT "mchoc" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "dchoc" 25;
+IO_PORT "dchoc" PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+IO_LOC "coin" 79;
+IO_PORT "coin" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "choc" 80;
+IO_PORT "choc" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "ret" 81;
+IO_PORT "ret" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "reset" 3;
+IO_PORT "reset" PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "clock" 52;
+IO_PORT "clock" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// end of vm.cst
+
+// end of VM
