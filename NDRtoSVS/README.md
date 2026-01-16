@@ -14,14 +14,22 @@
 
 `mul.h` -- multiplication inhibitor PTN as SVS data in .h file
 
-`NDRtoSVS.tcl`-- format of pop-up window for Tina plugins
+`NDRtoSVS.tcl`-- format of pop-up window for Tina's `nd` plugins
 
-`ndmount+.txt` -- lines to add to `ndmount` file of Tina to attach NDRtoSVS pluging
+`ndmount+.txt` -- lines to add to `ndmount` file of Tina's `n` to attach NDRtoSVS pluging
 
 
 # Attach NDRtoSVS to Tina `nd`
 
-bla
+Compile `NDRtoSVS` converter: gcc -o NDRtoSVS NDRtoSVS.c
+
+Copy binary file `NDRtoSVS` to `tina/bin` directory
+
+Copy `NDRtoSVS.tcl` file to `tina/bin/plugins` directory
+
+Copy lines from `ndmount+.txt` file and append them to `tina/bin/plugins/ndmount`
+
+Run `nd`
 
 
 # Work with PTN
@@ -30,7 +38,7 @@ Draw a net in Tina `nd` and save it as an .ndr file, for example add.ndr
 
 Tools - convert PTN specification - .h-SVS
 
-Save the resulting file as .h, for instance add.h
+Save the resulting file as .h, for example add.h
 
 Correct the name of included data file within ptn_svs.c, for example to add.h (#inlude "add.h")
 
