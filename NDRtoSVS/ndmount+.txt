@@ -1,0 +1,3 @@
+# .ndr tools
+
+mount NDRtoSVS {convert PTN specification} .ndr .txt NDRtoSVS.tcl
