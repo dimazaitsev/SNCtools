@@ -36,11 +36,11 @@ Run `nd`
 
 Draw a net in Tina `nd` and save it as an .ndr file, for example add.ndr
 
-Tools - convert PTN specification - .h-SVS
+In `nd` choose from menue: Tools - convert PTN specification - .h-SVS
 
 Save the resulting file as .h, for example add.h
 
-Correct the name of included data file within ptn_svs.c, for example to add.h (#inlude "add.h")
+Correct the name of included data file within `ptn_svs.c`, for example to add.h (#inlude "add.h")
 
 Compile SVS machine: gcc -o ptn_svs ptn_svs.c
 
