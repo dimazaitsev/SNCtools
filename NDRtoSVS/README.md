@@ -4,15 +4,15 @@
 
 `NDRtoSVS` -- Tina plugin to export an PTN from the graphic editor `nd` as System V Semaphores in a C language header (.h)
 
-`ptn_svs` -- Tina plugin to export an SN from the graphic editor `nd` in LSN/HSN format or as C language header (.h)
+`ptn_svs` -- SVS machine, data inserted as .h file
 
-`add.ndr` -- SN file convertor: LSN to MCC
+`add.ndr` -- addition inhibitor PTN in graphical format of Tina
 
-`add.h` -- SN virtual machine for multicore CPU with input in MCC format
+`add.h` -- addition inhibitor PTN as SVS data in .h file
 
-`mul.ndr` -- SN virtual machine for GPU with input in MCC format
+`mul.ndr` -- multiplication inhibitor PTN in graphical format of Tina
 
-`mul.h` -- simulation and prototyping within FreeRTOS, automated manufacture shop case study
+`mul.h` -- multiplication inhibitor PTN as SVS data in .h file
 
 
 # Data formats compatibility:
