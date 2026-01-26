@@ -2,7 +2,7 @@
 
 # Content: 
 
-`NDRtoSVS` -- Tina plugin to export an PTN from the graphic editor `nd` as System V Semaphores in a C language header (.h) to insert into SVS machines using threads with `pthread()` or processes with `fork()`
+`NDRtoSVS` -- Tina plugin to export a PTN from the graphic editor `nd` as System V Semaphores in a C language header (.h) to insert into SVS machines using threads with `pthread()` or processes with `fork()`
 
 `NDRtoSN` -- Tina plugin to export an SN from the graphic editor `nd` in LSN/HSN format or as C language header (.h)
 
