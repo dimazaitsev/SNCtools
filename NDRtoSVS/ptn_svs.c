@@ -1,7 +1,7 @@
 // Run PTN as SVS machine (https://doi.org/10.1080/17445760.2026.2615010)
 // using threads created by pthread_create()
 
-// $ gcc ptn_svs.c -lpthread -o tpn_svs
+// $ gcc ptn_svs.c -lpthread -o ptn_svs
 // $ ./ptn_svs
 // Useful commands to handle semaphores:
 // $ ipcs -s             % show semaphores
