@@ -2,7 +2,7 @@
 // using processes created by fork()
 // side effect - semaphores remain in kernel - try to get rid off 'em :-)
 
-// $ gcc ptn_svs_fork.c -o tpn_svs_fork
+// $ gcc ptn_svs_fork.c -o ptn_svs_fork
 // $ ./ptn_svs_fork
 // Useful commands to handle semaphores:
 // $ ipcs -s             % show semaphores
