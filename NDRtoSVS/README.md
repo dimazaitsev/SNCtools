@@ -4,7 +4,7 @@
 
 `NDRtoSVS` -- Tina plugin to export an PTN from the graphic editor `nd` as System V Semaphores in a C language header (.h)
 
-`ptn_svs` -- SVS machine, data inserted as .h file
+`ptn_svs` and `ptn_svs_fork` -- two variants of SVS machine - one using threads, the other using processess, correspondingly; data of a chosen PTN are inserted as .h file
 
 `add.ndr` -- addition inhibitor PTN in graphical format of Tina
 
@@ -36,9 +36,9 @@ Run `nd`
 
 Draw a net in Tina `nd` and save it as an .ndr file, for example add.ndr
 
-In `nd` choose from menue: Tools - convert PTN specification - .h-SVS
+In `nd` choose from menue: Tools - convert PTN specification - `.h-SVS`
 
-Save the resulting file as .h, for example add.h
+Save the resulting file as .h, for example `add.h`
 
 Correct the name of included data file within `ptn_svs.c`, for example to add.h (#inlude "add.h")
 
@@ -47,6 +47,8 @@ Compile SVS machine: gcc -o ptn_svs ptn_svs.c
 Run SVS machine: ./ptn_svs
 
 Options of `ptn_svs` -- first parameter -- level of output detail: 0, 1, 2
+
+In a similar way ptn_svs_fork.c is compiled and run. 
 
 
 # Data formats compatibility:
