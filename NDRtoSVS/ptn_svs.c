@@ -1,11 +1,12 @@
-// Run TPN as LSVS machine
+// Run PTN as SVS machine (https://doi.org/10.1080/17445760.2026.2615010)
+// using threads created by pthread_create()
 
-// $ gcc tpn_lsvs.c -lpthread -o tpn_lsvs
-// $ ./tpn_lsvs
-// $ cat /proc/sysvipc/sem
-// $ ipcs -s -i 0
-// $ cat /proc/sys/kernel/sem
-// $ ipcrm -s <semid>    delete by semid
+// $ gcc ptn_svs.c -lpthread -o tpn_svs
+// $ ./ptn_svs
+// Useful commands to handle semaphores:
+// $ ipcs -s             % show semaphores
+// $ ipcs -s -i <semid>  % show semaphore values and attache processes
+// $ ipcrm -s <semid>    % delete by semid
 
 #include <sys/types.h>
 #include <stdio.h>
@@ -20,15 +21,14 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-
-// include PTN LSVS .h file name here
+// include PTN SVS .h file name here
 #include "mul.h"
 
 int pls_sem;
 char err_buf[256];
 int deb=0;
 
-void prn_mu() {
+void prn_mu() { // print PTM marking (semaphores)
     // Get marking
     if (semctl (pls_sem, 0, GETALL, mu) == -1) {
         perror ("semctl GETALL mu"); exit (1);
@@ -67,7 +67,7 @@ int main (int argc, char **argv)
     
     if(argc>1) deb=atoi(argv[1]);
 
-    //  semafore array as the current place marking
+    // semafore array as the current place marking
     // create a set of M semaphores
     if ((pls_sem = semget (IPC_PRIVATE, M, 0660 | IPC_CREAT)) == -1) {
         perror ("semget"); exit (1);
