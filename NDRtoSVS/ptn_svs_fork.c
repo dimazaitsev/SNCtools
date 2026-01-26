@@ -1,15 +1,13 @@
-// Run PTN as SVS machine (URL)
+// Run PTN as SVS machine (https://doi.org/10.1080/17445760.2026.2615010)
 // using processes created by fork()
-// side effect - semaphores remain in kernel - try to get rid off :-)
+// side effect - semaphores remain in kernel - try to get rid off 'em :-)
 
-// $ gcc tpn_lsvs.c -lpthread -o tpn_lsvs
-// $ ./tpn_lsvs
-// Useful commands:
-// $ cat /proc/sysvipc/sem
-// $ ipcs -s
-// $ ipcs -s -i 0
-// $ cat /proc/sys/kernel/sem
-// $ ipcrm -s <semid>    delete by semid
+// $ gcc ptn_svs_fork.c -o tpn_svs_fork
+// $ ./ptn_svs_fork
+// Useful commands to handle semaphores:
+// $ ipcs -s             % show semaphores
+// $ ipcs -s -i <semid>  % show semaphore values and attache processes
+// $ ipcrm -s <semid>    % delete by semid
 
 #include <sys/types.h>
 #include <stdio.h>
