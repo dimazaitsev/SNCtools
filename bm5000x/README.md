@@ -14,35 +14,35 @@ For modeling, we use Tina (https://projects.laas.fr/tina/index.php) as an IDE an
 
 Our basic tools are available on GitHub: https://github.com/dimazaitsev/SNCtools
 
-# Mind early alpha versions
+### Mind early alpha versions
 
 Scarse output to use in scripts
 
-# Watch benchmark net in Tina nd - open .ndr file 
+### Watch benchmark net in Tina nd - open .ndr file 
 
 Too big to handle.
 Have a look at `gm6x6-a4.pdf` to understand the benchmark.
 
-# Benchmark Linux kernel
+### Benchmark Linux kernel
 
-    gcc -O3 -o pvzm pvzm.c
-    ./pvzm
+    >gcc -O3 -o pvzm pvzm.c
+    >./pvzm
 
-# Benchmark WN (SalWicki Net) VM 
+### Benchmark WN (SalWicki Net) VM 
 
-    gcc -O3 -o wn-bm wn-bm.c
-    ./wn-bm 1 < gm16x16-b6.mcc
+    >gcc -O3 -o wn-bm wn-bm.c
+    >./wn-bm 1 < gm16x16-b6.mcc
 
 # Plot of the benchmark
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* 16x16=256 concurrent multiplications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* 16x16=256 concurrent multiplications, 6-bits numbers
 gm16x16-b6 (118x118=13924)
 289.010659 s vs 0.368973 s
-* 32x32=1024 concurrent multiplication
+* 32x32=1024 concurrent multiplication, 6-bits numbers
 gm32x32-b6 ((118x118=13924))
 5673.596540 s vs 0.912282
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Slow incremental multiplication. Dependence on the number of bits influences more than the matrix size.
 
