@@ -12,17 +12,20 @@ We are interested in collaborating on projects aimed at implementing semaphores 
 
 For modeling, we use Tina (https://projects.laas.fr/tina/index.php) as an IDE and generate large PTN models with our own toolchains. Models are exported through our NDRtoALL plugin as `.h` files for the PVZ machine, then recompiled and executed as Linux applications.
 
-Our basic tools are available on GitHub:
-https://github.com/dimazaitsev/SNCtools
+Our basic tools are available on GitHub: https://github.com/dimazaitsev/SNCtools
 
+# Mind early alpha versions
 
-Benchmark Linux
-gcc -O3 -o pvzm pvzm.c
-./pvzm
+# watch benchmark net in Tina nd - open .ndr file (too big to handle)
+Have a look at `gm6x6-a4.pdf` to understand the benchmark
 
-Benchmark WN (SalWicki Net) VM 
-gcc -O3 -o wn-bm wn-bm.c
-./wn-bm 1 < gm16x16-b6.mcc
+# Benchmark Linux kernel
+    gcc -O3 -o pvzm pvzm.c
+    ./pvzm
+
+# Benchmark WN (SalWicki Net) VM 
+    gcc -O3 -o wn-bm wn-bm.c
+    ./wn-bm 1 < gm16x16-b6.mcc
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * 16x16=256 concurrent multiplications
