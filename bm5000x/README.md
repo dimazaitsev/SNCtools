@@ -1,4 +1,4 @@
-##Peak-load benchmarks for operating systems: Linux runs over 5,000× slower than our virtual machines##
+## Peak-load benchmarks for operating systems: Linux runs over 5,000× slower than our virtual machines ##
 
 We applied place-transition nets (PTNs) defined by System V semaphores (https://doi.org/10.1080/17445760.2026.2615010) to benchmark Linux (Ubuntu 24.04.4 LTS, kernel 6.17.0-35).
 
