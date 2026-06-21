@@ -25,6 +25,8 @@ Have a look at `gm6x6-a4.pdf` to understand the benchmark.
 
 ### Benchmark Linux kernel
 
+Edit PVZ data file name in `#include` within `pvzm.c`
+
     >gcc -O3 -o pvzm pvzm.c
     >./pvzm
 
