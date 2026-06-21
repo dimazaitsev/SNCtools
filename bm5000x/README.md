@@ -16,16 +16,24 @@ Our basic tools are available on GitHub: https://github.com/dimazaitsev/SNCtools
 
 # Mind early alpha versions
 
-# watch benchmark net in Tina nd - open .ndr file (too big to handle)
-Have a look at `gm6x6-a4.pdf` to understand the benchmark
+Scarse output to use in scripts
+
+# Watch benchmark net in Tina nd - open .ndr file 
+
+Too big to handle.
+Have a look at `gm6x6-a4.pdf` to understand the benchmark.
 
 # Benchmark Linux kernel
+
     gcc -O3 -o pvzm pvzm.c
     ./pvzm
 
 # Benchmark WN (SalWicki Net) VM 
+
     gcc -O3 -o wn-bm wn-bm.c
     ./wn-bm 1 < gm16x16-b6.mcc
+
+# Plot of the benchmark
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * 16x16=256 concurrent multiplications
@@ -36,6 +44,13 @@ gm32x32-b6 ((118x118=13924))
 5673.596540 s vs 0.912282
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Slow incremental multiplication. Dependence on the number of bits influences more than the matrix size.
+
+# References
+
+1) Zaitsev, D. A. (2026). Computing on semaphores of Dijkstra with place-transition nets. International Journal of Parallel, Emergent and Distributed Systems, 41(3), 291–320. https://doi.org/10.1080/17445760.2026.2615010
+
+2) Zaitsev, D. A., Ajima, Y., Bartlett, J. F. C., & Kumar, A. (2025). 3D multicore CPU vs GPU on sparse patterns of Sleptsov net virtual machine. International Journal of Parallel, Emergent and Distributed Systems, 40(4), 352–372. https://doi.org/10.1080/17445760.2025.2490148
 
 
 
