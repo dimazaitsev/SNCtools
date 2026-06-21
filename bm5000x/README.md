@@ -35,7 +35,7 @@ Edit PVZ data file name in `#include` within `pvzm.c`
     >gcc -O3 -o wn-bm wn-bm.c
     >./wn-bm 1 < gm16x16-b6.mcc
 
-# Plot of the benchmark
+### Plot of the benchmark
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * 16x16=256 concurrent multiplications, 6-bits numbers
@@ -48,7 +48,7 @@ gm32x32-b6 ((118x118=13924))
 
 Slow incremental multiplication. Dependence on the number of bits influences more than the matrix size.
 
-# References
+### References
 
 1) Zaitsev, D. A. (2026). Computing on semaphores of Dijkstra with place-transition nets. International Journal of Parallel, Emergent and Distributed Systems, 41(3), 291–320. https://doi.org/10.1080/17445760.2026.2615010
 
