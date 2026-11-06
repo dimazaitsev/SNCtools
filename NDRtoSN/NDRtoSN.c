@@ -988,7 +988,8 @@ void WritePIN_map_h( FILE * f )
 "    go=1;\n"
 "    in_pins_debounce_prev_time[pi]=dbt;\n"
 "  }\n" );
-for(cp=0;cp<mi;cp++) fprintf( f, "  digitalWrite(%d,LOW);\n", opl[cp].pin ); // switch of LED on next button pressed
+// a bug spotted by Aiden Elston, a Rolls-Royce apprentice, "mi" corrected to "mo"
+for(cp=0;cp<mo;cp++) fprintf( f, "  digitalWrite(%d,LOW);\n", opl[cp].pin ); // switch off LEDs on next button pressed
 fprintf( f, "}\n" );
   for(cp=0;cp<mi;cp++) {
   	fprintf( f, "void IR_Read_%d() { pi=%d; IR_Read_Gen(); }\n", cp, cp );
