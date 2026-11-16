@@ -14,9 +14,11 @@ For modeling, we use Tina (https://projects.laas.fr/tina/index.php) as an IDE an
 
 Our basic tools are available on GitHub: https://github.com/dimazaitsev/SNCtools
 
-### Mind early alpha versions
+### Mind early alpha v3 versions with the following changes
 
-Scarse output to use in scripts
+"PTN SVS machine" replaced by "PVZ machine"
+Sparse matrix data format for sops of all semop()
+Default scarse output to use in scripts
 
 ### Watch benchmark net in Tina nd - open .ndr file 
 
