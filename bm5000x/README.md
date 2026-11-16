@@ -63,6 +63,6 @@ Slow incremental multiplication. Dependence on the number of bits influences mor
 3) Zaitsev, Dmitry and Naluba, Richard, PVZ Machine as a Formal System Based on Unix-Linux fork() and semop() System Calls (July 08, 2026). Preprint available at SSRN: http://dx.doi.org/10.2139/ssrn.7606379
 5) Zaitsev, D. A., Ajima, Y., Bartlett, J. F. C., & Kumar, A. (2025). 3D multicore CPU vs GPU on sparse patterns of Sleptsov net virtual machine. International Journal of Parallel, Emergent and Distributed Systems, 40(4), 352–372. https://doi.org/10.1080/17445760.2025.2490148
 
-[1] is obsoleted by [2] for PVZ machine specification
+[1] is obsoleted by [2] for PVZ machine specification; 
 [3] describes independent virtual machins to run PTNs directly
 
