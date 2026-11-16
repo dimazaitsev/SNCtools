@@ -18,13 +18,16 @@ Our basic tools are available on GitHub: https://github.com/dimazaitsev/SNCtools
 
 "PTN SVS machine" replaced by "PVZ machine"  
 
+
 Sparse matrix data format for sops of all semop()  
+
 
 Default scarse output to use in scripts  
 
 ### Watch benchmark net in Tina nd - open .ndr file 
 
 Too big to handle.  
+
 
 Have a look at `gm6x6-a4.pdf` to understand the benchmark.  
 
