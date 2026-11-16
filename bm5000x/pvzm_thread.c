@@ -1,8 +1,9 @@
 // Run PTN as PVZ machine as described in open access papers:
-// https://doi.org/10.1080/17445760.2026.2615010 obsoleted by
-// 
+// https://doi.org/10.1080/17445760.2026.2615010 
+// obsoleted by
+// https://dx.doi.org/10.2139/ssrn.7606379
 // using System V semaphores with semop() and threads created by pthread()
-// Please mind, data is inside the app, inserted via #include;
+// Please mind, data is inside the app, inserted via #include
 // it requires recompiling the app for new data (PTN)
 // v.3.1 alpha - sparse matrix specification of all sops
 // @ 2026 Dmitry Zaitsev: zsoftua@yahoo.com
