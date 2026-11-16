@@ -30,6 +30,13 @@ Edit PVZ data file name in `#include` within `pvzm.c`
     >gcc -O3 -o pvzm pvzm.c
     >./pvzm
 
+Alternative implementation with threads
+
+    >gcc -O3 -o pvzm_thread pvzm_thread.c -pthread
+    >./pvzm_thread 1
+
+A parameter specifies the output detail level
+
 ### Benchmark WN (SalWicki Net) VM 
 
     >gcc -O3 -o wn-bm wn-bm.c
@@ -51,8 +58,10 @@ Slow incremental multiplication. Dependence on the number of bits influences mor
 ### References
 
 1) Zaitsev, D. A. (2026). Computing on semaphores of Dijkstra with place-transition nets. International Journal of Parallel, Emergent and Distributed Systems, 41(3), 291–320. https://doi.org/10.1080/17445760.2026.2615010
-
-2) Zaitsev, D. A., Ajima, Y., Bartlett, J. F. C., & Kumar, A. (2025). 3D multicore CPU vs GPU on sparse patterns of Sleptsov net virtual machine. International Journal of Parallel, Emergent and Distributed Systems, 40(4), 352–372. https://doi.org/10.1080/17445760.2025.2490148
+   obsoleted by
+3) Zaitsev, Dmitry and Naluba, Richard, PVZ Machine as a Formal System Based on Unix-Linux fork() and semop() System Calls (July 08, 2026). Preprint available at SSRN: http://dx.doi.org/10.2139/ssrn.7606379
+   independent virtual machines 
+5) Zaitsev, D. A., Ajima, Y., Bartlett, J. F. C., & Kumar, A. (2025). 3D multicore CPU vs GPU on sparse patterns of Sleptsov net virtual machine. International Journal of Parallel, Emergent and Distributed Systems, 40(4), 352–372. https://doi.org/10.1080/17445760.2025.2490148
 
 
 
