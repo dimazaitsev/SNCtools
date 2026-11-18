@@ -57,6 +57,14 @@ gm32x32-b6 ((118x118=13924))
 
 Slow incremental multiplication. Dependence on the number of bits influences more than the matrix size.
 
+
+### Inspired benchmarks
+
+We are glad that new benchmarks started to appear, which **emulate PVZ machine and our benchmarks** to scrutinize other subsystems of Linux kernel, in particular Inter-Process (Inter-Thread) Communication facilities: 
+
+* Tatiana Shmeleva, Peak-load benchmarks for POSIX semaphores in Linux kernel, https://github.com/tishtri/ConcCom/tree/main/bm_posem
+
+
 ### References
 
 1) Zaitsev, D. A. (2026). Computing on semaphores of Dijkstra with place-transition nets. International Journal of Parallel, Emergent and Distributed Systems, 41(3), 291–320. https://doi.org/10.1080/17445760.2026.2615010
