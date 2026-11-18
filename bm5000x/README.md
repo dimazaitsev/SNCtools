@@ -60,7 +60,7 @@ Slow incremental multiplication. Dependence on the number of bits influences mor
 
 ### Inspired benchmarks
 
-We are glad that new benchmarks started to appear, which **emulate PVZ machine and our benchmarks** to scrutinize other subsystems of Linux kernel, in particular Inter-Process (Inter-Thread) Communication facilities: 
+We are glad that new benchmarks started to appear, which **emulate PVZ machine and run on it our benchmarks** to scrutinize other subsystems of Linux kernel, in particular Inter-Process (Inter-Thread) Communication facilities: 
 
 * Tatiana Shmeleva, Peak-load benchmarks for POSIX semaphores in Linux kernel, https://github.com/tishtri/ConcCom/tree/main/bm_posem
 
